@@ -1,0 +1,2 @@
+# bytes license LICENSE const/license.h
+gcc -o out/gasm gasm.c -static
