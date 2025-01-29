@@ -11,17 +11,16 @@ typedef struct {
 } token_t;
 
 typedef struct {
-    unsigned int size;
+    int size; int index;
     token_t *tokens;
 } lexicon_t;
 
-typedef struct {
-    char *source;
-    symboltable_t symtable;
-    lexicon_t lexicon;
-} parse_t;
+void gasm_load(gybfile_t *context, char *filename);
+void parser(gybfile_t *context, lexicon_t lexicon);
+lexicon_t lexer(char *stream, int size);
 
-parse_t gasm_import(parse_t *parent, parse_t *child);
-parse_t gasm_load(char *filename);
-lexicon_t lexer(char *stream, unsigned int size);
-parse_t parser(lexicon_t lexicon);
+unsigned char   assembler_section = 0;
+unsigned char   assembler_datasize = 0;
+unsigned int    assembler_ln;
+unsigned int    assembler_col;
+char           *assembler_filename = NULL;

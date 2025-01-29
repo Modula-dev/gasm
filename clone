@@ -1,3 +1,0 @@
-mkdir -p include
-wget -O ./include/libgyb.h https://raw.githubusercontent.com/Modula-dev/gyb/refs/heads/main/lib/libgyb.h
-wget -O ./include/libgyb.c https://raw.githubusercontent.com/Modula-dev/gyb/refs/heads/main/lib/libgyb.c

@@ -1,23 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <sys/stat.h>
 #include "include/libgyb.h"
 #include "include/libgyb.c"
 #include "const/license.h"
 #include "const/strings.h"
-#include "const/opcodes.h"
 #include "src/gasm.h"
 #include "src/load.c"
 #include "src/assemble.c"
+#include "src/lexer.h"
 #include "src/lexer.c"
 #include "src/parser.c"
 #include "src/emit.c"
 
 int main (int argc, char **argv) {
-    if (argc == 1) { printf(badargs); exit(1); }
+    if (argc == 1) { printf(noargs); exit(1); }
     if (argc == 2) {
         if ( argv[1][0]=='-' ) {
         switch(argv[1][1]) {

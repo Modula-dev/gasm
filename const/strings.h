@@ -35,14 +35,22 @@ const char help[] = version "\
 
 #define ERROR "\e[0;31merror:\e[0m"
 #define HELPCMD "\e[0;32mgasm help\e[0m"
+#define HELPDIAG " will bring up the help dialog\n"
 
 const char cmd_help[] = "help";
 const char cmd_version[] = "version";
 const char cmd_license[] = "license";
 const char cmd_contributors[] = "contributors";
-const char badargs[] = ERROR " invalid arguments\nrunning " HELPCMD " will bring up the help dialog\n";
+const char noargs[] = ERROR " given no inputs, expected two\nrunning " HELPCMD HELPDIAG;
+const char badargs[] = ERROR " invalid arguments\nrunning " HELPCMD HELPDIAG;
 void printLicense() { printf("%s%s\n", notice, license); }
 
+const char asm_error[] = ERROR " \e[0;35m\"%s\" \e[0mln %d, col %d\n%s\n";
 const char asm_expected_instruction[] = "expected an instruction\n";
 const char asm_wrong_type[] = "given argument of wrong type\n";
-
+const char asm_redefinition[] = "redefinition of symbol\n";
+const char asm_lexerstuck[] = "lexer stuck\n";
+const char asm_string_hanging[] = "expected string to be closed\n";
+const char asm_number_multidecimal[] = "number contains multiple decimal points\n";
+const char asm_number_badcharacter[] = "number contains invalid character\n";
+const char asm_symbol_badcharacter[] = "invalid symbol definition or unknown character\n";
